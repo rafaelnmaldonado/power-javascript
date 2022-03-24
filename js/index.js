@@ -1,6 +1,6 @@
 var arrayPower = document.querySelectorAll(".power");
 
-for (var i = 0; i < arrayPower.length; i++) {
+for (let i = 0; i < arrayPower.length; i++) {
   console.log(i)
   var power = arrayPower[i];
 
@@ -42,7 +42,7 @@ for (var i = 0; i < arrayPower.length; i++) {
       var det = true;
 
       if (exponent > 0) {
-        for (var j = 1; j <= exponent; j++) {
+        for (let i = 1; i <= exponent; i++) {
           result = result * base;
         }
       }
@@ -57,7 +57,7 @@ for (var i = 0; i < arrayPower.length; i++) {
       }
 
       else {
-        for (var j = -1; j >= exponent; j--) {
+        for (let i = -1; i >= exponent; i--) {
           result = result * base;
         }
         result = 1/result;
