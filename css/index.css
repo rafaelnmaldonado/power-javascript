@@ -112,3 +112,7 @@ button[disabled=disabled], button:disabled {
 .invalid{
 	border: 1px solid red;
 }
+
+.invalid-power{
+    background-color: lightcoral;
+}

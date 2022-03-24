@@ -17,6 +17,7 @@ for (let i = 0; i < arrayPower.length; i++) {
   var exponentIsValid = true;
 
   if (isNaN(base) && isNaN(exponent)) {
+    power.classList.add("invalid-power");
     console.log("Invalid base and exponent!");
     baseIsValid = false;
     exponentIsValid = false;
@@ -24,12 +25,14 @@ for (let i = 0; i < arrayPower.length; i++) {
   }
   else {
     if (isNaN(base)) {
+      power.classList.add("invalid-power");
       console.log("Invalid base!");
       baseIsValid = false;
       unResult.textContent = "Invalid base!";
     }
 
     if (isNaN(exponent)) {
+      power.classList.add("invalid-power");
       console.log("Invalid exponent!");
       exponentIsValid = false;
       unResult.textContent = "Invalid exponent!";
@@ -51,12 +54,18 @@ for (let i = 0; i < arrayPower.length; i++) {
         if (base == 0) {
           det = false;
           unResult.textContent = "No agreed-upon value to zero to the power of zero!";
+          power.classList.add("invalid-power");
           break determined;
         }
         result = 1;
       }
 
       else {
+        if (base == 0) {
+          unResult.textContent = "No agreed-upon value to zero to the power of a negative number!";
+          power.classList.add("invalid-power");
+          break determined;
+        }
         for (let i = -1; i >= exponent; i--) {
           result = result * base;
         }
@@ -69,10 +78,10 @@ for (let i = 0; i < arrayPower.length; i++) {
         if (exponent % 10 == 1) {
           unPronounce.textContent = base + " raised to the " + exponent + "st power equals to " + result;
         }
-        else if (exponent % 10 == 1) {
+        else if (exponent % 10 == 2) {
           unPronounce.textContent = base + " raised to the " + exponent + "nd power equals to " + result;
         }
-        else if (exponent % 10 == 1) {
+        else if (exponent % 10 == 3) {
           unPronounce.textContent = base + " raised to the " + exponent + "rd power equals to " + result;
         }
         else {
